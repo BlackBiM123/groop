@@ -1,14 +1,15 @@
 <template>
-  <div 
-    class="custom-icon" 
-    :style="{ 
-      width: `${size}px`, 
+<!--  <div
+    class="custom-icon"
+    :style="{
+      width: `${size}px`,
       height: `${size}px`,
       color: `#${color}`
     }"
     v-html="svgContent"
   >
-  </div>
+  </div>-->
+  <span></span>
 </template>
 
 <script setup>
@@ -37,7 +38,7 @@ const loadSvg = async () => {
     const svg = await response.text();
     svgContent.value = svg
       .replace('<svg', '<svg style="width: 100%; height: 100%;"')
-      .replace(/fill="[^"]*"/g, `fill="#${props.color}"`); 
+      .replace(/fill="[^"]*"/g, `fill="#${props.color}"`);
   } catch (error) {
     console.error(`Failed to load icon: ${props.name}`, error);
   }
@@ -61,4 +62,4 @@ watch(() => props.name, loadSvg);
     fill: currentColor;
   }
 }
-</style> 
+</style>
