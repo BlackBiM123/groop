@@ -166,25 +166,25 @@ const isOpened = ref(false);
     background-size: contain;
 
     &:first-child {
-        background-image: url('@/assets/images/var(--image-path)/item1.png');
+       
         background-size: 280px;
         background-position: center 190px
     }
 
     &:nth-child(2) {
-        background-image: url('@/assets/images/var(--image-path)/item2.png');
+     
         background-size: 700px;
         background-position: 0% 90px
     }
 
     &:nth-child(3) {
-        background-image: url('@/assets/images/var(--image-path)/item3.png');
+       
         background-size: 750px;
         background-position: 40% 110px
     }
 
     &:nth-child(4) {
-        background-image: url('@/assets/images/var(--image-path)/item4.png');
+      
         background-size: 340px;
         background-position: center 195px
     }
