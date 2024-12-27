@@ -6,9 +6,9 @@ import Features from './components/Features.vue'
 import ListBlock from './components/ListBlock.vue'
 import Tasks from './components/Tasks.vue'
 import TeamBlock from './components/TeamBlock.vue'
-
 import Pricing from './components/Pricing.vue'
 import Footer from './components/Footer.vue'
+import Analytics from "./components/Analytics.vue";
 </script>
 
 <template>
@@ -20,11 +20,10 @@ import Footer from './components/Footer.vue'
     <ListBlock />
     <Tasks />
     <TeamBlock />
+    <Analytics />
     <Pricing />
     <Footer />
   </div>
 </template>
 
-<style>
 
-</style>

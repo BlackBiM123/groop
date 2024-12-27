@@ -33,7 +33,7 @@ const svgContent = ref('');
 
 const loadSvg = async () => {
   try {
-    const response = await fetch(`/src/assets/images/svg/${props.name}.svg`);
+    const response = await fetch(`/svg/${props.name}.svg`);
     const svg = await response.text();
     svgContent.value = svg
       .replace('<svg', '<svg style="width: 100%; height: 100%;"')
