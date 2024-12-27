@@ -1,0 +1,141 @@
+{
+  "btn": "Get early access",
+  "hero": {
+    "title": "the new standard for collaboration",
+    "subtitle": "We help you understand and manage your team effectively, providing actionable insights. We help your team by keeping things simple."
+  },
+  "subscribe": {
+    "title": "Check out our Telegram!",
+    "description": "Subscribe and stay tuned for BIG announcements and exclusive offers.",
+    "button": "Subscribe"
+  },
+  "features": {
+    "title": "The help that managers need! Groop's analytics grows and evolves alongside your business, helping to identify problem areas and",
+    "underlinedArea": "uncover new opportunities.",
+    "cards": {
+      "card1": {
+        "title": "Manager's Assistant",
+        "description": "Groop will monitor the completion of project tasks, assess team performance, and evaluate the productivity of each employee."
+      },
+      "card2": {
+        "title": "Fosters good environment",
+        "description": "Groop's AI examines work chats in Telegram and provides effective recommendations to improve the communication environment and enhance each employee's productivity."
+      },
+      "card3": {
+        "title": "Successful projects",
+        "description": "Using Groop, managers can reduce costs and project timelines through timely and precise decisions based on valuable insights."
+      }
+    }
+  },
+  "list": {
+    "title": "Important Information"
+  },
+  
+  "analytics": {
+    "title": "Groop's AI analytics will help successfully deliver complex projects",
+    "description": "Ever evolving analytics, which improves alongside your business.",
+    "card1": {
+      "title": "Select your work chat",
+      "description": "Groop turns your work chat into the source of retrospective data. Select desired chat to gain insights."
+    },
+    "card2": {
+      "title": "Choose a topic",
+      "description": "Select a topic from Groop's library with more to come."
+    },
+    "card3": {
+      "title": "Set timeframe",
+      "description": "Set specific dates or select preset period from the list."
+    },
+    "card4": {
+      "title": "Get result",
+      "description": "Instantly dive into your team's activity with smart reports generated through AI analysis."
+    }
+  },
+  "tasks": {
+    "title": "Smart task tracker at your fingertips",
+    "description": "Improve productivity of your team by simplifying their workflow. Groop ensures that every team member is notified about their tasks, and the manager is informed about the progress.",
+    "card1": {
+      "title": "Find Groop in Telegram Apps Center",
+      "description": "Open the app in just a few clicks directly through the Telegram Apps Center."
+    },
+    "card2": {
+      "title": "Set tasks and goals",
+      "description": "Create tasks, add descriptions, and assign them to team members."
+    },
+    "card3": {
+      "title": "Track progress",
+      "description": "Track progress with convenient and visually clear app structure."
+    },
+    "card4": {
+      "title": "Seamless Integration",
+      "description": "Transfer data from other applications, ensuring a smooth transition and minimal disruption."
+    }
+  },
+  "team": {
+    "title": "Build a productive team ",
+    "description": "Increase the efficiency of your business by building a productive team. Groop will show you a simple way to do it."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "description": "Experience the real productivity growth of your business with Groop:",
+    "basic": {
+        "price": "Free",
+        "item1": "1 work chat",
+        "item2": "1 project",
+        "item3": "5 seats",
+        "item4": "Limited",
+        "item5": "Reports unavailable"
+    }, 
+    "micro": {
+        "price": "$70/month",
+        "item1": "1 work chat ",
+        "item2": "Unlimited projects ",
+        "item3": "10 seats",
+        "item4": "Basic AI",
+        "item5": "12 reports"
+    },
+    "pro": {
+        "price": "$100/month",
+        "item1": "1 work chat",
+        "item2": "Unlimited projects ",
+        "item3": "25 seats",
+        "item4": "Advanced AI",
+        "item5": "30 reports"
+    }
+  },
+  "footer": {
+    "description": "Key to productivity of your team through intelligent automation.",
+    "socials": "Socials"
+  },
+  "report": {
+    "title": "Report Library",
+    "item1": "Project status and progress",
+    "item2": "Overdue tasks and reasons for delays",
+    "item3": "Discussion topics and outcomes",
+    "item4": "Unresolved discussions",
+    "item5": "Emerging problems, disputes, debates, and differing viewpoints",
+    "item6": "Participant activity and their key interactions",
+    "item7": "Identification of recurring processes and their frequency",
+    "item8": "Relationships between team members",
+    "item9": "Team values and individual contributions",
+    "item10": "Team performance",
+    "item11": "Individual performance",
+    "item12": "Workflows and how to improve them",
+    "item13": "Management style",   
+    "item14": "Emotional sentiment of the team",
+    "item15": "Motivation of the team and each member",
+    "item16": "Achievements of the team and each member",
+    "item17": "Failures of the team and each member"
+  },
+  "listBlock": {
+    "title": "Groop",
+    "item1": "Live analytics and valuable insights for timely decision-making",
+    "item2": "Monitoring of tasks and their execution",
+    "item3": "Telegram-app that doesn't require installation",
+    "item4": "Efficient time management",
+    "item5": "Identifies problems and finds solutions",
+    "item6": "Assesses activity and engagement of each employee",
+    "item7": "Retrospective use of communication data",
+    "item8": "Conflict resolution and prevention"
+  }
+} 
