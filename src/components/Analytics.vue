@@ -1,5 +1,5 @@
 <template>
-<section class="tasks" :class="locale" :style="{ '--image-path': imagePath }">
+<section class="tasks" :class="locale">
     <div class="tasks-container">
         <h2>{{ $t('analytics.title') }}</h2>
         <p class="description">{{ $t('analytics.description') }}</p>
@@ -38,7 +38,7 @@
 
 
 <script setup>
-import CustomIcon from './CustomIcon.vue';
+
 import {
     ref,
     computed
