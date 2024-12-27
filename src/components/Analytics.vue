@@ -12,7 +12,7 @@
                 <h3>
                     {{ $t('analytics.card2.title') }}
                     <div class="info-container" ref="target">
-                        <img src="/src/assets/images/icon.png" alt="alert-circle" @click="isOpened = !isOpened" />
+                      <span @click="isOpened = !isOpened" >1</span>
                         <div class="info-content">
                             <transition name="popup">
                                 <ReportLibrary @close="isOpened = false" v-if="isOpened" />
