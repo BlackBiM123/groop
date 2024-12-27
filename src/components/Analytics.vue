@@ -12,7 +12,7 @@
                 <h3>
                     {{ $t('analytics.card2.title') }}
                     <div class="info-container" ref="target">
-                        <img src="@/assets/images/icon.png" alt="alert-circle" @click="isOpened = !isOpened" />
+                        <img src="/src/assets/images/icon.png" alt="alert-circle" @click="isOpened = !isOpened" />
                         <div class="info-content">
                             <transition name="popup">
                                 <ReportLibrary @close="isOpened = false" v-if="isOpened" />
@@ -35,8 +35,8 @@
 </section>
 </template>
 
-  
-  
+
+
 <script setup>
 import CustomIcon from './CustomIcon.vue';
 import {
@@ -61,8 +61,8 @@ const target = ref(null)
 onClickOutside(target, event => isOpened.value = false)
 const isOpened = ref(false);
 </script>
-  
-  
+
+
 <style lang="scss" scoped>
 .tasks {
     padding: 4rem 0;
@@ -166,25 +166,25 @@ const isOpened = ref(false);
     background-size: contain;
 
     &:first-child {
-       
+
         background-size: 280px;
         background-position: center 190px
     }
 
     &:nth-child(2) {
-     
+
         background-size: 700px;
         background-position: 0% 90px
     }
 
     &:nth-child(3) {
-       
+
         background-size: 750px;
         background-position: 40% 110px
     }
 
     &:nth-child(4) {
-      
+
         background-size: 340px;
         background-position: center 195px
     }
@@ -359,12 +359,10 @@ const isOpened = ref(false);
 .popup-enter-from,
 .popup-leave-to {
     opacity: 0;
-    transform: scale(0.5) translateY(-40px);
 }
 
 .popup-enter-to,
 .popup-leave-from {
     opacity: 1;
-    transform: scale(1) translateY(0);
 }
 </style>

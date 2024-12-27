@@ -1,5 +1,5 @@
 <template>
-<!--  <div
+  <div
     class="custom-icon"
     :style="{
       width: `${size}px`,
@@ -8,8 +8,7 @@
     }"
     v-html="svgContent"
   >
-  </div>-->
-  <span></span>
+  </div>
 </template>
 
 <script setup>
