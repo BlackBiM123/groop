@@ -86,6 +86,7 @@ onMounted(() => {
     &::before {
       transform: translate(-50%, 0);
       animation: twinkle 5s infinite;
+      transition: transform ease 3s;
     }
   }
 
@@ -101,7 +102,7 @@ onMounted(() => {
     box-shadow: 0 0 150px 30px rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     z-index: 1;
-    transition: transform ease 3s;
+
   }
 
   .hero-container {
