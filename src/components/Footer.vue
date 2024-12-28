@@ -10,7 +10,7 @@
             </div>
             <div class="footer-right">
                 <span class="label">{{ $t('footer.socials') }}</span>
-                <a href="https://t.me/lentadnya" target="_blank">Telegram</a>
+                <a :href="tgUrl" target="_blank">Telegram</a>
             </div>
         </div>
     </div>
@@ -19,8 +19,11 @@
 <script setup>
 import CustomIcon from './CustomIcon.vue';
 import { useI18n } from 'vue-i18n';
-
+import { computed } from 'vue';
 const { locale } = useI18n();
+const tgUrl = computed(() => {
+  return locale.value === 'ru' ? 'https://t.me/groop_ru' : 'https://t.me/groop_eng';
+});
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,

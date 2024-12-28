@@ -2,7 +2,14 @@
   "btn": "Get early access",
   "hero": {
     "title": "the new standard for collaboration",
-    "subtitle": "We help you understand and manage your team effectively, providing actionable insights. We help your team by keeping things simple."
+    "subtitle": "We help you understand and manage your team effectively, providing actionable insights. We help your team by keeping things simple.",
+    "emailPlaceholder": "Your email",
+    "sending": "Sending...",
+    "success": "Thank you! We will contact you soon",
+    "invalidEmail": "Please enter a valid email address",
+    "serverError": "Something went wrong. Please try again later",
+    "error": "Error",
+    "successMessage": "Thank you for your interest! We will contact you soon."
   },
   "subscribe": {
     "title": "Check out our Telegram!",
@@ -78,6 +85,7 @@
   "pricing": {
     "title": "Pricing",
     "description": "Experience the real productivity growth of your business with Groop:",
+    "recommended": "Recommended",
     "basic": {
         "price": "Free",
         "item1": "1 work chat",

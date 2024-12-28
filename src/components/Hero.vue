@@ -1,13 +1,28 @@
 <template>
   <section class="hero" :class="{ ru: isRussian, ready: isReady }">
-    <StarField />
+    <!-- <StarField /> -->
+    <SnowField />
     <div class="hero-container">
       <h1><span class="name">Groop —</span>{{ $t('hero.title') }}</h1>
       <p>{{ $t('hero.subtitle') }}</p>
-      <div class="hero-form">
-        <input type="text" placeholder="Your email">
-        <button class="hero-button">{{ $t('btn') }}</button>
-      </div>
+      <form class="hero-form" @submit.prevent="submitEmail">
+        <input 
+          v-model="email" 
+          type="email" 
+          :placeholder="$t('hero.emailPlaceholder')"
+          :disabled="isLoading"
+        >
+        <button 
+          type="submit"
+          class="hero-button" 
+          :disabled="isLoading || !email"
+        >
+          {{ isLoading ? $t('hero.sending') : $t('btn') }}
+        </button>
+        <p v-if="error" class="info-line error-message">{{ $t('hero.serverError') }}</p>
+        <p v-if="success" class="info-line success-message">{{ $t('hero.success') }}</p>
+      </form>
+      
     </div>
     <div class="hero-bottom-img">
       <img v-if="isRussian" src="@/assets/images/hero-bg.png" alt="Hero bottom">
@@ -18,6 +33,7 @@
 </template>
 
 <script setup>
+import SnowField from './SnowField.vue';
 import StarField from './StarField.vue';
 import {
   computed, onMounted, ref, watch
@@ -26,11 +42,66 @@ import {
   useI18n
 } from 'vue-i18n';
 
-const {
-  locale
-} = useI18n();
+const { locale, t } = useI18n();
 const isRussian = computed(() => locale.value === 'ru');
 const isReady = ref(false);
+const email = ref('');
+const error = ref('');
+const success = ref(false);
+const isLoading = ref(false);
+
+// Функция для очистки сообщений
+const clearMessages = () => {
+  error.value = '';
+  success.value = false;
+};
+
+// Следим за изменениями error и success
+watch([error, success], ([newError, newSuccess]) => {
+  if (newError || newSuccess) {
+    setTimeout(clearMessages, 3000);
+  }
+});
+
+const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+
+const submitEmail = async () => {
+  clearMessages(); // Очищаем предыдущие сообщения перед новой отправкой
+  
+  if (!validateEmail(email.value)) {
+    error.value = t('hero.invalidEmail');
+    return;
+  }
+
+  isLoading.value = true;
+
+  try {
+    const response = await fetch('https://test.profdepo.ru/api/AppUsers/add-to-wish-list', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(email.value)
+    });
+
+    if (!response.ok) {
+      throw new Error(t('hero.serverError'));
+    }
+
+    success.value = true;
+    email.value = '';
+  } catch (e) {
+    error.value = e.message;
+  } finally {
+    isLoading.value = false;
+  }
+};
 
 // Добавляем watch для locale
 watch(locale, () => {
@@ -60,7 +131,23 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  .hero-form {
+    position: relative;
+  }
+  .info-line {
+    font-size: 12px;
+    margin: 10px 0;
+    position: absolute;
+    width:100%;
+    text-align: center;
+    bottom:-40px;
+    &.error-message {
+      color: #ff4444;
+    }
+    &.success-message {
+      color: #44ff44;
+    }
+  }
   &.ru {
     .hero-container {
       width: 1040px;
@@ -133,6 +220,11 @@ onMounted(() => {
         font-size: 16px;
         font-weight: 400;
         min-width: 0;
+
+        &:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
       }
 
       .hero-button {
@@ -144,6 +236,11 @@ onMounted(() => {
         height: 100%;
         border-radius: 28px;
         white-space: nowrap;
+
+        &:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
       }
     }
   }
@@ -153,8 +250,8 @@ onMounted(() => {
     font-size: 60px;
     line-height: 68px;
     position: relative;
-    background-color: #060606;
-    box-shadow: 0px -20px 20px 20px #060606;
+    //background-color: #060606;
+    //box-shadow: 0px -20px 20px 20px #060606;
 
     span {
       position: relative;
@@ -182,8 +279,8 @@ onMounted(() => {
     width: 720px;
     margin: 35px auto;
     color: #b9b9b9;
-    background-color: #060606;
-    box-shadow: 0 0 100px 50px #060606;
+    //background-color: #060606;
+    //box-shadow: 0 0 100px 50px #060606;
   }
 
   .hero-bottom-img {
@@ -285,7 +382,7 @@ onMounted(() => {
 
       .hero-form {
         height: 46px;
-
+        position: relative;
         button {
           font-size: 15px;
           padding: 0 15px !important;
@@ -359,5 +456,17 @@ onMounted(() => {
       }
     }
   }
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.success-message {
+  color: #44ff44;
+  font-size: 14px;
+  margin-top: 10px;
 }
 </style>

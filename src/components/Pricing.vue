@@ -42,7 +42,7 @@
                 <!-- Pro Plan -->
                 <div class="pricing-card pro">
                     <div class="card-header">
-                        <div class="recommended">Recommended</div>
+                        <div class="recommended">{{ $t('pricing.recommended') }}</div>
                         <span class="plan-name">Pro</span>
                         <h3 class="price">{{ $t('pricing.pro.price') }}</h3>
                     </div>
