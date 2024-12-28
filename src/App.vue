@@ -9,6 +9,22 @@ import TeamBlock from './components/TeamBlock.vue'
 import Pricing from './components/Pricing.vue'
 import Footer from './components/Footer.vue'
 import Analytics from "./components/Analytics.vue";
+
+import { watch } from 'vue';
+import { usePreferredLanguages } from '@vueuse/core';
+import {useI18n} from "vue-i18n";
+
+const preferredLanguages = usePreferredLanguages();
+const { locale } = useI18n();
+
+watch(preferredLanguages, (languages) => {
+  if (languages.includes('ru')) {
+    locale.value = 'ru';
+  } else {
+    locale.value = 'en';
+  }
+}, { immediate: true });
+
 </script>
 
 <template>
@@ -25,5 +41,6 @@ import Analytics from "./components/Analytics.vue";
     <Footer />
   </div>
 </template>
+
 
 
