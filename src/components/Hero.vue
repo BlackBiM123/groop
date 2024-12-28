@@ -111,6 +111,7 @@ const isRussian = computed(() => locale.value === 'ru');
                 padding: 0 20px;
                 font-size: 16px;
                 font-weight: 400;
+                min-width: 0;
             }
 
             .hero-button {
@@ -319,7 +320,7 @@ const isRussian = computed(() => locale.value === 'ru');
 }
 @media (max-width: 375px) {
     .hero {
-       
+
         .hero-container{
             .hero-form{
                 input{

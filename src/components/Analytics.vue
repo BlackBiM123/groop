@@ -12,7 +12,11 @@
           <h3>
             {{ $t('analytics.card2.title') }}
             <div class="info-container" ref="target">
-              <span @click="isOpened = !isOpened" >*</span>
+              <span class="custom-icon" @click="isOpened = !isOpened">
+                <svg width="22" height="22" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.00033 12.3332V8.99984M9.00033 5.6665H9.00866M17.3337 8.99984C17.3337 13.6022 13.6027 17.3332 9.00033 17.3332C4.39795 17.3332 0.666992 13.6022 0.666992 8.99984C0.666992 4.39746 4.39795 0.666504 9.00033 0.666504C13.6027 0.666504 17.3337 4.39746 17.3337 8.99984Z" stroke="#164DFF" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
               <div class="info-content">
                 <transition name="popup">
                   <ReportLibrary @close="isOpened = false" v-if="isOpened" />
@@ -70,7 +74,10 @@ const isOpened = ref(false);
 
   .info-container {
     position: relative;
-
+    .custom-icon{
+      transform: translateY(3px);
+    }
+    .custom-icon,
     img {
       cursor: pointer;
     }
