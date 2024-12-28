@@ -1,5 +1,5 @@
 <template>
-    <section class="hero" :class="{ ru: isRussian }">
+    <section class="hero" :class="{ ru: isRussian, ready: isReady }">
         <StarField />
         <div class="hero-container">
             <h1><span class="name">Groop —</span>{{ $t('hero.title') }}</h1>
@@ -20,7 +20,7 @@
 <script setup>
 import StarField from './StarField.vue';
 import {
-    computed
+  computed, onMounted, ref
 } from 'vue';
 import {
     useI18n
@@ -30,6 +30,10 @@ const {
     locale
 } = useI18n();
 const isRussian = computed(() => locale.value === 'ru');
+const isReady = ref(false)
+onMounted(()=>{
+  setTimeout(() => isReady.value = true, 1000)
+})
 </script>
 
 <style lang="scss" scoped>
@@ -68,20 +72,26 @@ const isRussian = computed(() => locale.value === 'ru');
         flex-grow: 1;
     }
 
+    &.ready{
+      &::before {
+        transform: translate(-50%, 0);
+        animation: twinkle 5s infinite;
+      }
+    }
+
     &::before {
-        content: '123';
+        content: '';
         opacity: 0.8;
         position: absolute;
         bottom: -100px;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, 100%);
         width: 950px;
         height: 470px;
         box-shadow: 0 0 150px 30px rgba(255, 255, 255, 0.6);
         border-radius: 50%;
         z-index: 1;
-        animation: twinkle 5s infinite;
-        /* Анимация мерцания */
+        transition: transform ease 3s ;
     }
 
     .hero-container {
