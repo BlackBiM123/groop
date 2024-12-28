@@ -6,15 +6,15 @@
       <h1><span class="name">Groop —</span>{{ $t('hero.title') }}</h1>
       <p>{{ $t('hero.subtitle') }}</p>
       <form class="hero-form" @submit.prevent="submitEmail">
-        <input 
-          v-model="email" 
-          type="email" 
+        <input
+          v-model="email"
+          type="email"
           :placeholder="$t('hero.emailPlaceholder')"
           :disabled="isLoading"
         >
-        <button 
+        <button
           type="submit"
-          class="hero-button" 
+          class="hero-button"
           :disabled="isLoading || !email"
         >
           {{ isLoading ? $t('hero.sending') : $t('btn') }}
@@ -22,7 +22,7 @@
         <p v-if="error" class="info-line error-message">{{ $t('hero.serverError') }}</p>
         <p v-if="success" class="info-line success-message">{{ $t('hero.success') }}</p>
       </form>
-      
+
     </div>
     <div class="hero-bottom-img">
       <img v-if="isRussian" src="@/assets/images/hero-bg.png" alt="Hero bottom">
@@ -73,7 +73,7 @@ const validateEmail = (email) => {
 
 const submitEmail = async () => {
   clearMessages(); // Очищаем предыдущие сообщения перед новой отправкой
-  
+
   if (!validateEmail(email.value)) {
     error.value = t('hero.invalidEmail');
     return;
@@ -313,7 +313,11 @@ onMounted(() => {
   .hero {
     height: 1024px;
     min-height: 1024px;
-
+    .hero-form{
+      .info-line{
+        bottom:-50px;
+      }
+    }
     &::before {
 
       bottom: 0px;
@@ -372,7 +376,13 @@ onMounted(() => {
   .hero {
     height: 812px;
     min-height: 812px;
-
+    .hero-form{
+      .info-line{
+        bottom:-55px;
+        font-size:12px;
+        line-height: 14px;
+      }
+    }
     &::before {
       bottom: -200px;
     }
