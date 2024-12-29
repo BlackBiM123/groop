@@ -112,11 +112,11 @@ watch(locale, () => {
   isReady.value = false;
   setTimeout(() => {
     isReady.value = true;
-  }, 1000);
+  }, 2000);
 });
 
 onMounted(() => {
-  setTimeout(() => isReady.value = true, 1000);
+  setTimeout(() => isReady.value = true, 2000);
 });
 
 </script>
