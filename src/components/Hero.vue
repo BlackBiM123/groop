@@ -1,7 +1,12 @@
 <template>
   <section class="hero" :class="{ ru: isRussian, ready: isReady }">
+
+    <!-- Звезды и кргуляшки статичные с паралаксом -->
     <!-- <StarField /> -->
+
+    <!-- Звезды и кргуляшки анимация - снег-->
     <SnowField />
+
     <div class="hero-container">
       <h1><span class="name">Groop —</span>{{ $t('hero.title') }}</h1>
       <p>{{ $t('hero.subtitle') }}</p>
