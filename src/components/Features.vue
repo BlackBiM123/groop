@@ -80,12 +80,12 @@ onUnmounted(() => {
 
         &::after {
             content: '';
-            
+
             width: 500px;
             height: 10px;
             background: url('@/assets/images/line1.png') no-repeat left center;
             background-size: 100% 100%;
-        
+
             }
         }
     }
@@ -156,12 +156,13 @@ onUnmounted(() => {
 
         &:first-child {
             background: #000 url('../assets/images/card-item1.png') no-repeat center center;
+            background-size: 50% ;
         }
 
         &:nth-child(2) {
             height: 548px;
             background: #000 url('../assets/images/card-bg.png') no-repeat center center;
-
+            background-size: auto 100% ;
             p {
                 color: #FFF;
             }
@@ -169,6 +170,7 @@ onUnmounted(() => {
 
         &:last-child {
             background: #000 url('../assets/images/card-item2.png') no-repeat center center;
+          background-size: 50% ;
         }
     }
 }
@@ -187,7 +189,7 @@ onUnmounted(() => {
     .features {
         padding: 0.5rem 0;
         &.ru {
-        
+
         .underlined {
             position: relative;
             white-space: nowrap;
@@ -214,10 +216,10 @@ onUnmounted(() => {
                     height: 10px;
                     background: url('@/assets/images/line1.png') no-repeat left center;
                     background-size: 100% 100%;
-          
+
                     opacity: 1;
                     transform: scaleX(1);
-                    
+
                     transform-origin: left;
                     transition: transform 0.5s ease-out, opacity 0.3s;
                 }
@@ -273,7 +275,7 @@ onUnmounted(() => {
 
             .underlined {
 
-                
+
             }
         }
 
@@ -293,7 +295,7 @@ onUnmounted(() => {
             }
         }
         &.ru {
-        
+
         .underlined {
             &::after {
                 content: '';

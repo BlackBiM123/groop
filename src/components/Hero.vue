@@ -1,12 +1,11 @@
 <template>
   <section class="hero" :class="{ ru: isRussian, ready: isReady }">
-
     <!-- Звезды и кргуляшки статичные с паралаксом -->
     <!-- <StarField /> -->
 
     <!-- Звезды и кргуляшки анимация - снег-->
-    <SnowField />
 
+    <SnowField />
     <div class="hero-container">
       <h1><span class="name">Groop —</span>{{ $t('hero.title') }}</h1>
       <p>{{ $t('hero.subtitle') }}</p>
@@ -289,11 +288,17 @@ onMounted(() => {
   }
 
   .hero-bottom-img {
+
     height: 500px;
     overflow: hidden;
     position: relative;
     z-index: 5;
     opacity: 1;
+    img{
+      max-width:994px;
+      width:100%;
+      height:auto;
+    }
   }
 }
 
